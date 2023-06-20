@@ -18,7 +18,7 @@ with open(csvpath) as csvfile:
     csvheader = next(csvreader)
 
     for row in csvreader:
-        # For each row, add a count of 1 to the votes variable
+        # For each row, add a count of 1 to the total votes count
         total_votes = total_votes + 1
         # Look for candidate for the candidates list in column 3
         candidate = row[2]
@@ -30,18 +30,20 @@ with open(csvpath) as csvfile:
         # Add 1 to the index of previous candidate to create the dictionary index for new candidate
         candidate_votes_dict[candidate] += 1
 
+
+with open("Analysis/poll_results.txt", "w") as textfile:
     # Print document heading
-    print("Election Results")
+    print("Election Results\n\n")
     # Print break
-    print("-------------------------")
+    print("-------------------------\n\n")
     # Print the total number of votes in dataset to the terminal
-    print(total_votes)
+    print(f'Total Votes: {total_votes}\n\n')
     # Print break
-    print("-------------------------")
+    print("-------------------------\n\n")
 
 # Create text file
 with open("Analysis/poll_results.txt", "w") as textfile:
-    # Write everyting that was printed to the terminal above, with each entry starting on a new line, with a space between each line, to the text file
+#     # Write everyting that was printed to the terminal above, with each entry starting on a new line, with a space between each line, to the text file
     textfile.write("Election Results\n")
     textfile.write("\n")
     textfile.write("--------------------------\n")
@@ -62,19 +64,21 @@ with open("Analysis/poll_results.txt", "w") as textfile:
         votes = candidate_votes_dict[candidate]
         # Calculate votes allocated to each candidate as percentage of total votes
         percent_votes = votes / total_votes * 100
-        # Print the candidate's name, with percentage of votes receives, and count of votes received by that candidate
-        print(f'{candidate}: {percent_votes:.3f}% ({votes})')
+        # Print the candidate's name, with percentage of votes received, and count of votes received by that candidate
+        print(f'{candidate}: {percent_votes:.3f}% ({votes})\n\n')
         # Write what was printed to the terminal above to the text file
-        textfile.write(f"{candidate}: {percent_votes:.3f}% ({votes})\n\n")
+        textfile.write(f'{candidate}: {percent_votes:.3f}% ({votes})\n\n')
         # Compare each candidates votes to the original value set, and find the highest count
         if votes > winning_vote:
-            # Set the winning vote to equal to the highest candidate vote coung
+            # Set the winning vote to equal the highest candidate vote count
             winning_vote = votes
             # Set the winner to be the candidate name with the highest vote count
             winner = candidate
             
+    
+    print("--------------------------\n\n")
     # Print the winner's name 
-    print(f'Winner: {winner}')
+    print(f'Winner: {winner}\n\n')
     # Write the winners name, with spaces and a break, to the text file.
     textfile.write("\n")
     textfile.write("--------------------------\n")
