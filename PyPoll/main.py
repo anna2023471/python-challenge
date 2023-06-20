@@ -43,15 +43,11 @@ with open("Analysis/poll_results.txt", "w") as textfile:
 
 # Create text file
 with open("Analysis/poll_results.txt", "w") as textfile:
-#     # Write everyting that was printed to the terminal above, with each entry starting on a new line, with a space between each line, to the text file
-    textfile.write("Election Results\n")
-    textfile.write("\n")
-    textfile.write("--------------------------\n")
-    textfile.write("\n")
-    textfile.write(f"Total Votes: {total_votes}\n")
-    textfile.write("\n")
-    textfile.write("--------------------------\n")
-    textfile.write("\n")
+    # Write everyting that was printed to the terminal above to the text file
+    textfile.write("Election Results\n\n")
+    textfile.write("--------------------------\n\n")
+    textfile.write(f"Total Votes: {total_votes}\n\n")
+    textfile.write("--------------------------\n\n")
                 
     # Set the initial value for the winning vote count
     winning_vote = 0
@@ -79,8 +75,6 @@ with open("Analysis/poll_results.txt", "w") as textfile:
     print("--------------------------\n\n")
     # Print the winner's name 
     print(f'Winner: {winner}\n\n')
-    # Write the winners name, with spaces and a break, to the text file.
-    textfile.write("\n")
-    textfile.write("--------------------------\n")
-    textfile.write("\n")
+    # Write the winners name to the text file.
+    textfile.write("--------------------------\n\n")
     textfile.write(f'Winner: {winner}')
