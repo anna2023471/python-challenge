@@ -1,5 +1,5 @@
 # python-challenge
-Module 3 Challenge
+Module 3 Challenge\n
 The following files are provided in this repo:
 For PyBank: budget_data.csv in Resources folder, bank_results.txt in Analysis folder, main.py on the same level as the Resources and Analysis folders.
 For PyPoll: election_data.csv in Resources folder, poll_results.txt in Analysis folder, main.py on the same level as the Resources and Analysis folders.
