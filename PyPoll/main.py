@@ -25,9 +25,9 @@ with open(csvpath) as csvfile:
         # If the name in the row isn't currently in the candidates list, add it to the candidates list
         if candidate not in candidates:
             candidates.append(candidate)
-            # Set the dictionary index to 0 for first candidate
+            # Set the initial count of votes for candidate to 0
             candidate_votes_dict[candidate] = 0
-        # Add 1 to the index of previous candidate to create the dictionary index for new candidate
+        # Add 1 to the count of votes for candidate
         candidate_votes_dict[candidate] += 1
 
 
@@ -56,7 +56,7 @@ with open("Analysis/poll_results.txt", "w") as textfile:
 
     # Start iterating through the candidates in the candidate dictionary
     for candidate in candidate_votes_dict:
-        # Allocate votes to each candidate in the dictionary
+        # Set the votes variable to equal the count of votes for each candidate
         votes = candidate_votes_dict[candidate]
         # Calculate votes allocated to each candidate as percentage of total votes
         percent_votes = votes / total_votes * 100
@@ -64,7 +64,7 @@ with open("Analysis/poll_results.txt", "w") as textfile:
         print(f'{candidate}: {percent_votes:.3f}% ({votes})\n\n')
         # Write what was printed to the terminal above to the text file
         textfile.write(f'{candidate}: {percent_votes:.3f}% ({votes})\n\n')
-        # Compare each candidates votes to the original value set, and find the highest count
+        # Compare each candidate's votes to the original value set, and find the highest count
         if votes > winning_vote:
             # Set the winning vote to equal the highest candidate vote count
             winning_vote = votes
