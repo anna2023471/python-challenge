@@ -80,7 +80,7 @@ print(f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decr
 
 # Create text file
 with open("Analysis/bank_results.txt", "w") as textfile:
-# Write everything that was printed to the terminal above, with each entry starting on a new line, and with a space between each line, to the text file
+# Write everything that was printed to the terminal above to the text file
     textfile.write("Financial Analysis\n\n")
     textfile.write("------------------------------\n\n")
     textfile.write(f'Total Months: {len(totals)}\n\n')
