@@ -64,36 +64,36 @@ with open(csvpath) as csvfile:
     average_change = all_changes / len(change_list)
         
 # Print document heading
-print("Financial Analysis")
+print("Financial Analysis\n\n")
 # Print break
-print("------------------------------")
+print("------------------------------\n\n")
 # Print total time periods
-print(f"Total Months: {len(totals)}")
+print(f'Total Months: {len(totals)}\n\n')
 # Print total of Profit/Losses
-print(f"Total: {final_total:.0f}")
+print(f'Total: {final_total:.0f}\n\n')
 # Print average between-period change
-print(f"Average Change: ${average_change:.2f}")
+print(f'Average Change: ${average_change:.2f}\n\n')
 # Print the greatest positive change between periods with relevant month
-print(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase:.0f})")
+print(f'Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase:.0f})\n\n')
 # Print the greatest negative change between periods with relevant month
-print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease:.0f})")
+print(f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease:.0f})\n\n')
 
 # Create text file
 with open("Analysis/bank_results.txt", "w") as textfile:
-# Write everything that was printed to the terminal above, with each entry starting on a new line, and with a space between each line, into the text file
-    textfile.write("Financial Analysis\n")
-    textfile.write("\n")
-    textfile.write("------------------------------\n")
-    textfile.write("\n")
-    textfile.write(f"Total Months: {len(totals)}\n")
-    textfile.write("\n")
-    textfile.write(f"Total: {final_total:.0f}\n")
-    textfile.write("\n")
-    textfile.write(f"Average Change: ${average_change:.2f}\n")
-    textfile.write("\n")
-    textfile.write(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase:.0f})\n")
-    textfile.write("\n")
-    textfile.write(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease:.0f})\n")
+# Write everything that was printed to the terminal above, with each entry starting on a new line, and with a space between each line, to the text file
+    textfile.write("Financial Analysis\n\n")
+    # textfile.write("\n")
+    textfile.write("------------------------------\n\n")
+    # textfile.write("\n")
+    textfile.write(f'Total Months: {len(totals)}\n\n')
+    # textfile.write("\n")
+    textfile.write(f'Total: {final_total:.0f}\n\n')
+    # textfile.write("\n")
+    textfile.write(f'Average Change: ${average_change:.2f}\n\n')
+    # textfile.write("\n")
+    textfile.write(f'Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase:.0f})\n\n')
+    # textfile.write("\n")
+    textfile.write(f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease:.0f})\n\n')
 
 
 
