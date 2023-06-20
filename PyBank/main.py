@@ -45,13 +45,13 @@ with open(csvpath) as csvfile:
         if net_change > greatest_increase:
             # Set greatest difference value as the greatest increase variable
             greatest_increase = net_change
-            # Also return the relevan month for the greatest increase
+            # Also return the relevant month for the greatest increase
             greatest_increase_month = row[0]
         # While iterating through list of differences, compare against present variable and find greatest negative value
         if net_change < greatest_decrease:
             # Set greatest difference value as the greatest decrease variable
             greatest_decrease = net_change
-            # Also return the relevan month for the greatest decrease
+            # Also return the relevant month for the greatest decrease
             greatest_decrease_month = row[0]
 
     # Count number of values in the totals list
