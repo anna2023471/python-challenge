@@ -63,7 +63,7 @@ with open(csvpath) as csvfile:
     # Calculate the average between-period change
     average_change = all_changes / len(change_list)
         
-# Print document headint
+# Print document heading
 print("Financial Analysis")
 # Print break
 print("------------------------------")
